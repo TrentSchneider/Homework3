@@ -13,12 +13,12 @@ function writePassword() {
 			number = "0123456789",
 			special = "!@#$%^&*()_+~`|}{[]:;?><,./-=",
 			passLength,
-			passChar,
+			passChar = "",
 			useLowCase,
 			useUpCase,
 			useNum,
 			useSpec,
-			userPass;
+			userPass = "";
 
 		do {
 			var useLowCase = prompt(
@@ -46,7 +46,7 @@ function writePassword() {
 				passChar += upper;
 				alert("Upper case letters will be used.");
 			} else if (useUpCase === "no") {
-				alert("Upper case lettesr will not be used.");
+				alert("Upper case letters will not be used.");
 			}
 		} while (useUpCase !== "yes" && useUpCase !== "no");
 
@@ -60,7 +60,7 @@ function writePassword() {
 			if (useNum === "yes") {
 				passChar += number;
 				alert("Numbers will be used.");
-			} else if (useNumb === "no") {
+			} else if (useNum === "no") {
 				alert("Numbers will not be used.");
 			}
 		} while (useNum !== "yes" && useNum !== "no");
@@ -81,16 +81,18 @@ function writePassword() {
 		} while (useSpec !== "yes" && useSpec !== "no");
 
 		do {
-			var passLenght = prompt(
+			var passLength = prompt(
 				"How long would you like your password to be? (Please choose a number between 8 and 128)"
 			);
-			alert("Your password will be " + passLenght + " characters long.");
+			alert("Your password will be " + passLength + " characters long.");
 			Math.floor(passLength);
-		} while (!isNaN(passLength) && passLength > 7 && passLength < 129);
+		} while (isNaN(passLength) && passLength < 8 && passLength > 128);
 
 		for (let i = 0; i < passLength; i++) {
 			userPass += passChar.charAt(Math.floor(Math.random() * passChar.length));
 		}
+		return userPass;
+		console.log(userPass);
 	}
 }
 
