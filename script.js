@@ -20,7 +20,7 @@ function writePassword() {
 			useSpec,
 			userPass;
 
-		while (useLowCase !== "yes" || useLowCase !== "no") {
+		do {
 			var useLowCase = prompt(
 				"Would you like lower case letters in your password? (Please type Yes or No)"
 			);
@@ -33,8 +33,9 @@ function writePassword() {
 			} else if (useLowCase === "no") {
 				alert("Lower case letters will not be used.");
 			}
-		}
-		while (useUpCase !== "yes" || useUpCase !== "no") {
+		} while (useLowCase !== "yes" && useLowCase !== "no");
+
+		do {
 			var useUpCase = prompt(
 				"Would you like upper case letters in your password? (Please type Yes or No)"
 			);
@@ -47,8 +48,9 @@ function writePassword() {
 			} else if (useUpCase === "no") {
 				alert("Upper case lettesr will not be used.");
 			}
-		}
-		while (useNum !== "yes" || useNum !== "no") {
+		} while (useUpCase !== "yes" && useUpCase !== "no");
+
+		do {
 			var useNum = prompt(
 				"Would you like numbers in your password? (Please type Yes or No)"
 			);
@@ -57,32 +59,35 @@ function writePassword() {
 
 			if (useNum === "yes") {
 				passChar += number;
-				alert("Upper case letters will be used.");
+				alert("Numbers will be used.");
 			} else if (useNumb === "no") {
-				alert("Upper case lettesr will not be used.");
+				alert("Numbers will not be used.");
 			}
-		}
-		while (useSpec !== "yes" || useSpec !== "no") {
+		} while (useNum !== "yes" && useNum !== "no");
+
+		do {
 			var useSpec = prompt(
-				"Would you like numbers in your password? (Please type Yes or No)"
+				"Would you like special characters (!@#) in your password? (Please type Yes or No)"
 			);
 
 			var useSpec = useSpec.toLowerCase();
 
 			if (useSpec === "yes") {
 				passChar += special;
-				alert("Upper case letters will be used.");
+				alert("Special characters will be used.");
 			} else if (useSpec === "no") {
-				alert("Upper case letters will not be used.");
+				alert("Special characters will not be used.");
 			}
-		}
-		while (!isNaN(passLength) && passLength > 7 && passLength < 129) {
+		} while (useSpec !== "yes" && useSpec !== "no");
+
+		do {
 			var passLenght = prompt(
 				"How long would you like your password to be? (Please choose a number between 8 and 128)"
 			);
 			alert("Your password will be " + passLenght + " characters long.");
 			Math.floor(passLength);
-		}
+		} while (!isNaN(passLength) && passLength > 7 && passLength < 129);
+
 		for (let i = 0; i < passLength; i++) {
 			userPass += passChar.charAt(Math.floor(Math.random() * passChar.length));
 		}
