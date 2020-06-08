@@ -81,14 +81,16 @@ function writePassword() {
 		} while (useSpec !== "yes" && useSpec !== "no");
 
 		do {
-			var passLength = prompt(
-				"How long would you like your password to be? (Please choose a number between 8 and 128)"
+			var passLength = parseInt(
+				prompt(
+					"How long would you like your password to be? (Please choose a number between 8 and 128, decimals will be rounded down to the nearest whole number)"
+				),
+				10
 			);
-			if (!isNaN(passLength) && passLength > 7 && passLength < 128) {
+			if (Number.isInteger(passLength) && passLength > 7 && passLength < 129) {
 				alert("Your password will be " + passLength + " characters long.");
-				Math.floor(passLength);
 			}
-		} while (isNaN(passLength) && passLength < 8 && passLength > 128);
+		} while (isNaN(passLength) || passLength < 8 || passLength > 128);
 
 		for (let i = 0; i < passLength; i++) {
 			userPass += passChar.charAt(Math.floor(Math.random() * passChar.length));
