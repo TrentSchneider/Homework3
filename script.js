@@ -47,6 +47,41 @@ function writePassword() {
 				alert("Upper case lettesr will not be used.");
 			}
 		}
+		while (useNum !== "yes" || useNum !== "no") {
+			var useNum = prompt(
+				"Would you like numbers in your password? (Please type Yes or No)"
+			);
+
+			var useNum = useNum.toLowerCase();
+
+			if (useNum === "yes") {
+				passChar += number;
+				alert("Upper case letters will be used.");
+			} else if (useNumb === "no") {
+				alert("Upper case lettesr will not be used.");
+			}
+		}
+		while (useSpec !== "yes" || useSpec !== "no") {
+			var useSpec = prompt(
+				"Would you like numbers in your password? (Please type Yes or No)"
+			);
+
+			var useSpec = useSpec.toLowerCase();
+
+			if (useSpec === "yes") {
+				passChar += special;
+				alert("Upper case letters will be used.");
+			} else if (useSpec === "no") {
+				alert("Upper case letters will not be used.");
+			}
+		}
+		while (!isNaN(passLength) && passLength > 7 && passLength < 129) {
+			var passLenght = prompt(
+				"How long would you like your password to be? (Please choose a number between 8 and 128)"
+			);
+			alert("Your password will be " + passLenght + " characters long.");
+			Math.floor(passLength);
+		}
 	}
 }
 
