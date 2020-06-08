@@ -17,7 +17,8 @@ function writePassword() {
 			useLowCase,
 			useUpCase,
 			useNum,
-			useSpec;
+			useSpec,
+			userPass;
 
 		while (useLowCase !== "yes" || useLowCase !== "no") {
 			var useLowCase = prompt(
@@ -81,6 +82,9 @@ function writePassword() {
 			);
 			alert("Your password will be " + passLenght + " characters long.");
 			Math.floor(passLength);
+		}
+		for (let i = 0; i < passLength; i++) {
+			userPass += passChar.charAt(Math.floor(Math.random() * passChar.length));
 		}
 	}
 }
