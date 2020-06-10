@@ -108,7 +108,7 @@ button[disabled] {
 	padding-bottom: 75px;
 	font-size: 1.2rem;
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-bottom: 10px;
 	border: 2px dashed #c0c7cf;
 	border-radius: 6px;
@@ -122,6 +122,8 @@ button[disabled] {
 	width: 60px;
 	height: 34px;
 	margin-top: 10px;
+	align-items: center;
+	text-align: center;
 }
 
 .switch input {
@@ -183,6 +185,11 @@ h4 {
 }
 
 .toggles {
+	display: flex;
+	justify-content: space-around;
+}
+.togAlign {
+	vertical-align: center;
 }
 
 /* Range Slider */
