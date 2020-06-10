@@ -13,36 +13,48 @@
 				<h1>Password Generator</h1>
 			</header>
 			<div class="card">
-				<div class="card-header">
-					<h2>Generate a Password</h2>
-				</div>
 				<div class="card-body">
-					<h3 class="instruct1">
+					<h3>
 						Please choose which character types you would like in the password.
 					</h3>
-					<label class="switch">
-						<input type="checkbox" id="lowChoice" />
-						<h5>Lower Case Letters</h5>
-						<span class="slider round"></span>
-					</label>
-					<br />
-					<label class="switch">
-						<input type="checkbox" id="upChoice" />
-						<h5>Upper Case Letters</h5>
-						<span class="slider round"></span>
-					</label>
-					<br />
-					<label class="switch">
-						<input type="checkbox" id="numChoice" />
-						<h5>Numbers</h5>
-						<span class="slider round"></span>
-					</label>
-					<br />
-					<label class="switch">
-						<input type="checkbox" id="specChoice" />
-						<h5>Special Characters</h5>
-						<span class="slider round"></span>
-					</label>
+					<div class="toggles">
+						<label class="switch">
+							<input type="checkbox" id="lowChoice" />
+							<span class="sliderTog round"></span>
+							<h5>Lower Case Letters</h5>
+						</label>
+
+						<label class="switch">
+							<input type="checkbox" id="upChoice" />
+							<span class="sliderTog round"></span>
+							<h5>Upper Case Letters</h5>
+						</label>
+
+						<label class="switch">
+							<input type="checkbox" id="numChoice" />
+							<span class="sliderTog round"></span>
+							<h5>Numbers</h5>
+						</label>
+
+						<label class="switch">
+							<input type="checkbox" id="specChoice" />
+							<span class="sliderTog round"></span>
+							<h5>Special Characters</h5>
+						</label>
+					</div>
+					<h3>Please select a password length from 8 to 128 characters</h3>
+					<h5 class="slideVal"></h5>
+					<div class="slidecontainer">
+						<h4>Length: <span id="showLength"></span></h4>
+						<input
+							type="range"
+							min="8"
+							max="128"
+							value="68"
+							class="slider"
+							id="lengthChoice"
+						/>
+					</div>
 					<textarea
 						readonly
 						id="password"
