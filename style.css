@@ -189,7 +189,8 @@ h4 {
 	justify-content: space-around;
 }
 .togAlign {
-	vertical-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Range Slider */
