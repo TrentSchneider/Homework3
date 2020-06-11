@@ -20,7 +20,7 @@ function writePassword() {
 			number = "0123456789",
 			special = "!@#$%^&*()_+~`|}{[]:;?><,./-=",
 			passLength,
-			passChar,
+			passArray = [],
 			lowTog = document.getElementById("lowChoice"),
 			upTog = document.getElementById("upChoice"),
 			numTog = document.getElementById("numChoice"),
@@ -29,21 +29,25 @@ function writePassword() {
 			userPass = "";
 
 		if (lowTog.checked) {
-			passChar += lower;
-			console.log(lowTog);
+			// passChar += lower;
+			passArray.push(lower);
 		}
 		if (upTog.checked) {
-			passChar += upper;
+			// passChar += upper;
+			passArray.push(upper);
 		}
 		if (numTog.checked) {
-			passChar += number;
+			// passChar += number;
+			passArray.push(number);
 		}
 		if (specTog.checked) {
-			passChar += special;
+			// passChar += special;
+			passArray.push(special);
 		}
 		passLength = Number(lengthSlide.value);
 
 		for (let i = 0; i < passLength; i++) {
+			var passChar = passArray[Math.floor(Math.random() * passArray.length)];
 			userPass += passChar.charAt(Math.floor(Math.random() * passChar.length));
 		}
 		console.log(userPass);
