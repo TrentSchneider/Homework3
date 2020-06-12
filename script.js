@@ -47,10 +47,16 @@ function writePassword() {
 		passLength = Number(lengthSlide.value);
 
 		for (let i = 0; i < passLength; i++) {
-			var passChar = passArray[Math.floor(Math.random() * passArray.length)];
-			userPass += passChar.charAt(Math.floor(Math.random() * passChar.length));
+			if (passArray === undefined || passArray.length == 0) {
+				userPass =
+					"Please select at least one character type to generate a password.";
+			} else {
+				var passChar = passArray[Math.floor(Math.random() * passArray.length)];
+				userPass += passChar.charAt(
+					Math.floor(Math.random() * passChar.length)
+				);
+			}
 		}
-		console.log(userPass);
 		return userPass;
 	}
 }
