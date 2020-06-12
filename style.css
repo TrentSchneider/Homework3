@@ -18,7 +18,7 @@ body {
 }
 
 .wrapper {
-	padding-top: 30px;
+	padding-top: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -115,11 +115,12 @@ button[disabled] {
 	overflow: hidden;
 }
 
+/* toggle slider */
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 60px;
-	height: 34px;
+	width: 37px;
+	height: 22px;
 	margin-top: 10px;
 	align-items: center;
 	text-align: center;
@@ -131,7 +132,6 @@ button[disabled] {
 	height: 0;
 }
 
-/* toggle slider */
 .sliderTog {
 	position: absolute;
 	cursor: pointer;
@@ -147,10 +147,10 @@ button[disabled] {
 .sliderTog:before {
 	position: absolute;
 	content: "";
-	height: 26px;
-	width: 26px;
+	height: 17px;
+	width: 17px;
 	left: 4px;
-	bottom: 4px;
+	bottom: 3px;
 	background-color: white;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
@@ -165,9 +165,9 @@ input:focus + .sliderTog {
 }
 
 input:checked + .sliderTog:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
+	-webkit-transform: translateX(15px);
+	-ms-transform: translateX(15px);
+	transform: translateX(12px);
 }
 
 .sliderTog.round {
@@ -191,7 +191,12 @@ h4 {
 
 .togText {
 	text-align: left;
-	vertical-align: center;
+	vertical-align: middle;
+	margin-top: 0;
+}
+
+.togTextMarg {
+	margin-bottom: 10px;
 }
 
 /* Range Slider */
