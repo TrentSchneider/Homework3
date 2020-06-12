@@ -45,7 +45,6 @@ h1 {
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 30px 40px;
-	padding-bottom: 0%;
 }
 
 .card-body {
@@ -105,10 +104,10 @@ button[disabled] {
 	padding-top: 15px;
 	padding-left: 15px;
 	padding-right: 15px;
-	padding-bottom: 75px;
+	padding-bottom: 85px;
 	font-size: 1.2rem;
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 2px dashed #c0c7cf;
 	border-radius: 6px;
@@ -184,13 +183,15 @@ h4 {
 	text-align: center;
 }
 
-.toggles {
-	display: flex;
-	justify-content: space-around;
+.borderBtm {
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: #d3d3d3;
 }
-.togAlign {
-	margin-left: auto;
-	margin-right: auto;
+
+.togText {
+	text-align: left;
+	vertical-align: center;
 }
 
 /* Range Slider */
@@ -222,6 +223,10 @@ h4 {
 	border-radius: 50%;
 	background: #2196f3;
 	cursor: pointer;
+}
+
+.sliderPad {
+	padding-bottom: 21px;
 }
 
 @media (max-width: 690px) {
