@@ -12,7 +12,7 @@ slideVal.oninput = function () {
 function writePassword() {
 	var password = generatePassword();
 	var passwordText = document.querySelector("#password");
-
+	// Add values to the pool of characters
 	passwordText.value = password;
 	function generatePassword() {
 		var lower = "abcdefghijklmnopqrstuvwxyz",
@@ -29,23 +29,19 @@ function writePassword() {
 			userPass = "";
 
 		if (lowTog.checked) {
-			// passChar += lower;
 			passArray.push(lower);
 		}
 		if (upTog.checked) {
-			// passChar += upper;
 			passArray.push(upper);
 		}
 		if (numTog.checked) {
-			// passChar += number;
 			passArray.push(number);
 		}
 		if (specTog.checked) {
-			// passChar += special;
 			passArray.push(special);
 		}
 		passLength = Number(lengthSlide.value);
-
+		// Generate password
 		for (let i = 0; i < passLength; i++) {
 			if (passArray === undefined || passArray.length == 0) {
 				userPass =
@@ -61,5 +57,4 @@ function writePassword() {
 	}
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
